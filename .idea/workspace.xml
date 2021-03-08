@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e085c77d-d9a6-4308-9182-2daed8d1cd82" name="Default Changelist" comment="code with exam pattern" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RZ8N70CWSLL]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/RanveerSingh1997/exam_pattern2021.git" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1pSpRW1znNZkEPm38u3tAojQM5u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="dart.analysis.tool.window.force.activate" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e085c77d-d9a6-4308-9182-2daed8d1cd82" name="Default Changelist" comment="" />
+      <created>1615186337639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615186337639</updated>
+    </task>
+    <task id="LOCAL-00001" summary="code with exam pattern">
+      <created>1615205889127</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1615205889127</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="code with exam pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="code with exam pattern" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1615194871971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1615194871971" />
+    <state x="100" y="100" width="1609" height="840" key="DiffContextDialog" timestamp="1615205575266">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="100" y="100" width="1609" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615205575266" />
+    <state width="1860" height="297" key="GridCell.Tab.0.bottom" timestamp="1615203447248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
+    <state width="1860" height="297" key="GridCell.Tab.0.center" timestamp="1615203447248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
+    <state width="1860" height="297" key="GridCell.Tab.0.left" timestamp="1615203447247">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447247" />
+    <state width="1860" height="297" key="GridCell.Tab.0.right" timestamp="1615203447248">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1860" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
+    <state x="684" y="325" key="git4idea.history.wholeTree.VcsStructureChooser" timestamp="1615204487645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="684" y="325" key="git4idea.history.wholeTree.VcsStructureChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615204487645" />
+    <state x="491" y="229" key="search.everywhere.popup" timestamp="1615186342758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="491" y="229" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615186342758" />
+  </component>
+</project>
