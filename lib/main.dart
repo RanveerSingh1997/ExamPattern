@@ -4,7 +4,10 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 import 'package:photo_view/photo_view.dart';
@@ -20,12 +23,120 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textTheme: GoogleFonts.aBeeZeeTextTheme(),
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: LoginPage(),
     );
   }
 }
+
+class LoginPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              CupertinoIcons.book,
+              size: 68,
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            RichText(
+                text: TextSpan(
+                    text: "Login ".toUpperCase(),
+                    style: GoogleFonts.modakTextTheme().headline3.copyWith(fontSize:38),
+                    children: [
+                  TextSpan(
+                    text: "in With",
+                    style: Theme.of(context).textTheme.headline5.copyWith(
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
+                  )
+                ])),
+            SizedBox(
+              height: 10,
+            ),
+            Row(
+              children: [
+                signInCard(
+                  text: "Teacher",
+                  onPress: () {
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>TeacherHomePage()));
+                  },
+                ),
+                signInCard(
+                  text: "Student",
+                  onPress: () {},
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+class signInCard extends StatelessWidget {
+  final text, onPress;
+
+  const signInCard({
+    this.text,
+    this.onPress,
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              text,
+              style: Theme.of(context).textTheme.headline6.copyWith(
+                  letterSpacing: 2,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton.icon(
+              onPressed: onPress,
+              icon: Icon(
+                FontAwesomeIcons.google,
+              ),
+              label: Text(
+                "  Google  Sign  In".toUpperCase(),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class TeacherHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    );
+  }
+}
+
+
+
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
@@ -330,13 +441,12 @@ class _DrawState extends State<Draw> {
           FloatingActionButton(
             mini: true,
             onPressed: () {
-              scaffoldKey.currentState.showBottomSheet(
-                (context) => Container(
-
-                ),
-                shape:RoundedRectangleBorder(borderRadius:BorderRadius.only(topLeft: Radius.circular(40),topRight:Radius.circular(40))),
-                backgroundColor:Colors.black12
-              );
+              scaffoldKey.currentState.showBottomSheet((context) => Container(),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40))),
+                  backgroundColor: Colors.black12);
             },
             child: Icon(Icons.sort),
           )

@@ -35,6 +35,10 @@ dependencies:
   http:
   path_provider:
   flutter_colorpicker:
+  font_awesome_flutter: ^8.11.0
+  google_fonts: ^2.0.0
+
+
 
 dev_dependencies:
   flutter_test:
