@@ -10,13 +10,31 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e085c77d-d9a6-4308-9182-2daed8d1cd82" name="Default Changelist" comment="code with exam pattern" />
+    <list default="true" id="e085c77d-d9a6-4308-9182-2daed8d1cd82" name="Default Changelist" comment="code with exam pattern">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/6.7/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/6.7/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/6.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/6.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/6.7/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/6.7/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/4f2a58af27abc49ecf55570043bbf938.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" beforeDir="false" afterPath="$PROJECT_DIR$/build/f872507f30e2ff2523f0f1d19160266e.cache.dill.track.dill" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated_plugin_registrant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RZ8N70CWSLL]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -71,36 +89,37 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="code with exam pattern" />
     <option name="LAST_COMMIT_MESSAGE" value="code with exam pattern" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1615194871971">
+    <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1615265812837">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1615194871971" />
+    <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1615265812837" />
     <state x="100" y="100" width="1609" height="840" key="DiffContextDialog" timestamp="1615205575266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="100" width="1609" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615205575266" />
-    <state width="1860" height="297" key="GridCell.Tab.0.bottom" timestamp="1615203447248">
+    <state width="1877" height="597" key="GridCell.Tab.0.bottom" timestamp="1615272692555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="297" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
-    <state width="1860" height="297" key="GridCell.Tab.0.center" timestamp="1615203447248">
+    <state width="1877" height="597" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615272692555" />
+    <state width="1877" height="597" key="GridCell.Tab.0.center" timestamp="1615272692555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="297" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
-    <state width="1860" height="297" key="GridCell.Tab.0.left" timestamp="1615203447247">
+    <state width="1877" height="597" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615272692555" />
+    <state width="1877" height="597" key="GridCell.Tab.0.left" timestamp="1615272692554">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="297" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447247" />
-    <state width="1860" height="297" key="GridCell.Tab.0.right" timestamp="1615203447248">
+    <state width="1877" height="597" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615272692554" />
+    <state width="1877" height="597" key="GridCell.Tab.0.right" timestamp="1615272692555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="297" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615203447248" />
+    <state width="1877" height="597" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615272692555" />
     <state x="684" y="325" key="git4idea.history.wholeTree.VcsStructureChooser" timestamp="1615204487645">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

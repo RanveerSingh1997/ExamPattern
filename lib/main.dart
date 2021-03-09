@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'dart:ui';
 import 'dart:typed_data';
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner:false,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -36,21 +37,71 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      top:false,
-      child: Scaffold(
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              // Expanded(
-              //   child:PdfPreviewWidget("http://www.africau.edu/images/default/sample.pdf"),
-              // ),
-              Expanded(
-                 child:Draw(),
+      top: false,
+      child: DefaultTabController(
+        initialIndex: currentIndex,
+        length: 2,
+        child: Scaffold(
+          appBar: AppBar(
+            elevation: 0,
+            backgroundColor: Colors.white54,
+            title: Text(
+              "Examination".toUpperCase(),
+              style: Theme.of(context)
+                  .textTheme
+                  .subtitle1
+                  .copyWith(color: Colors.black, fontWeight: FontWeight.w900),
+            ),
+            centerTitle: true,
+            actions: [
+              TextButton.icon(
+                icon: Icon(
+                  Icons.upload_sharp,
+                  color: Colors.black,
+                ),
+                onPressed: () {},
+                label: Text(
+                  'Submit Copy'.toUpperCase(),
+                  style: Theme.of(context).textTheme.caption.copyWith(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w700,
+                      ),
+                ),
               ),
+            ],
+            bottom: TabBar(
+                onTap: (int index) {
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+                automaticIndicatorColorAdjustment: true,
+                isScrollable: false,
+                physics: ScrollPhysics(),
+                indicatorColor: Colors.black,
+                labelColor: Colors.black,
+                tabs: [
+                  Tab(
+                    child: Text("Exam Paper"),
+                    icon: Icon(CupertinoIcons.book_circle_fill),
+                  ),
+                  Tab(
+                    child: Text("Paper Writing"),
+                    icon: Icon(CupertinoIcons.book_solid),
+                  ),
+                ]),
+          ),
+          body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            children: [
+              PdfPreviewWidget(
+                  "http://www.africau.edu/images/default/sample.pdf"),
+              Draw(),
             ],
           ),
         ),
@@ -58,12 +109,14 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
 class PdfPreviewWidget extends StatefulWidget {
   String url;
   String title;
   bool isExam = false;
   var isCopyLoaded;
-  PdfPreviewWidget(this.url, {this.isExam,this.title,this.isCopyLoaded});
+
+  PdfPreviewWidget(this.url, {this.isExam, this.title, this.isCopyLoaded});
 
   @override
   _PdfPreviewWidgetState createState() => _PdfPreviewWidgetState();
@@ -106,15 +159,15 @@ class _PdfPreviewWidgetState extends State<PdfPreviewWidget> {
                   ),
                   currentIndex == index
                       ? Positioned(
-                      left: 0,
-                      top: 0,
-                      right: 0,
-                      bottom: 0,
-                      child: Icon(
-                        Icons.check_circle,
-                        color: Colors.deepOrange,
-                        size: 40,
-                      ))
+                          left: 0,
+                          top: 0,
+                          right: 0,
+                          bottom: 0,
+                          child: Icon(
+                            Icons.check_circle,
+                            color: Colors.deepOrange,
+                            size: 40,
+                          ))
                       : Container()
                 ],
               ),
@@ -142,14 +195,12 @@ class _PdfPreviewWidgetState extends State<PdfPreviewWidget> {
     }
     setState(() {
       loading = false;
-      if(widget.isCopyLoaded!=null)
-        widget.isCopyLoaded(true);
+      if (widget.isCopyLoaded != null) widget.isCopyLoaded(true);
     });
   }
 }
 
 class FileUtils {
-
   static Future<File> downloadFile(String url, String filename) async {
     http.Client client = new http.Client();
     var req = await client.get(Uri.parse(url));
@@ -160,20 +211,21 @@ class FileUtils {
     return file;
   }
 
-  //
-  // static Future<File> pdfFilePicker() async {
-  //   var result = await FilePicker.platform.pickFiles(
-  //       allowCompression: true,
-  //       allowMultiple: false,
-  //       type: FileType.custom,
-  //       allowedExtensions: ['pdf']);
-  //   if (result != null) {
-  //     var file = File(result.files.single.path);
-  //
-  //     return file;
-  //   }
-  // }
+//
+// static Future<File> pdfFilePicker() async {
+//   var result = await FilePicker.platform.pickFiles(
+//       allowCompression: true,
+//       allowMultiple: false,
+//       type: FileType.custom,
+//       allowedExtensions: ['pdf']);
+//   if (result != null) {
+//     var file = File(result.files.single.path);
+//
+//     return file;
+//   }
+// }
 }
+
 class Draw extends StatefulWidget {
   @override
   _DrawState createState() => _DrawState();
@@ -183,7 +235,7 @@ class _DrawState extends State<Draw> {
   Color selectedColor = Colors.black;
   Color pickerColor = Colors.black;
   double strokeWidth = 3.0;
-  List<DrawingPoints> points =[];
+  List<DrawingPoints> points = [];
   bool showBottomList = false;
   double opacity = 1.0;
   StrokeCap strokeCap = (Platform.isAndroid) ? StrokeCap.butt : StrokeCap.round;
@@ -195,77 +247,99 @@ class _DrawState extends State<Draw> {
     Colors.amber,
     Colors.black
   ];
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              IconButton(
-                  icon: Icon(Icons.album),
-                  onPressed: () {
-                    setState(() {
-                      if (selectedMode == SelectedMode.StrokeWidth)
-                        showBottomList = !showBottomList;
-                      selectedMode = SelectedMode.StrokeWidth;
-                    });
-                  }),
-              IconButton(
-                  icon: Icon(Icons.opacity),
-                  onPressed: () {
-                    setState(() {
-                      if (selectedMode == SelectedMode.Opacity)
-                        showBottomList = !showBottomList;
-                      selectedMode = SelectedMode.Opacity;
-                    });
-                  }),
-              IconButton(
-                  icon: Icon(Icons.color_lens),
-                  onPressed: () {
-                    setState(() {
-                      if (selectedMode == SelectedMode.Color)
-                        showBottomList = !showBottomList;
-                      selectedMode = SelectedMode.Color;
-                    });
-                  }),
+      key: scaffoldKey,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+      bottomNavigationBar: Row(
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    IconButton(
+                        icon: Icon(Icons.album),
+                        onPressed: () {
+                          setState(() {
+                            if (selectedMode == SelectedMode.StrokeWidth)
+                              showBottomList = !showBottomList;
+                            selectedMode = SelectedMode.StrokeWidth;
+                          });
+                        }),
+                    IconButton(
+                        icon: Icon(Icons.opacity),
+                        onPressed: () {
+                          setState(() {
+                            if (selectedMode == SelectedMode.Opacity)
+                              showBottomList = !showBottomList;
+                            selectedMode = SelectedMode.Opacity;
+                          });
+                        }),
+                    IconButton(
+                        icon: Icon(Icons.color_lens),
+                        onPressed: () {
+                          setState(() {
+                            if (selectedMode == SelectedMode.Color)
+                              showBottomList = !showBottomList;
+                            selectedMode = SelectedMode.Color;
+                          });
+                        }),
+                    IconButton(
+                        icon: Icon(Icons.clear),
+                        onPressed: () {
+                          setState(() {
+                            showBottomList = false;
+                            points.clear();
+                          });
+                        }),
+                  ],
+                ),
+                Visibility(
+                  child: (selectedMode == SelectedMode.Color)
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: getColorList(),
+                        )
+                      : Slider(
+                          value: (selectedMode == SelectedMode.StrokeWidth)
+                              ? strokeWidth
+                              : opacity,
+                          max: (selectedMode == SelectedMode.StrokeWidth)
+                              ? 50.0
+                              : 1.0,
+                          min: 0.0,
+                          onChanged: (val) {
+                            setState(() {
+                              if (selectedMode == SelectedMode.StrokeWidth)
+                                strokeWidth = val;
+                              else
+                                opacity = val;
+                            });
+                          }),
+                  visible: showBottomList,
+                ),
+              ],
+            ),
+          ),
+          FloatingActionButton(
+            mini: true,
+            onPressed: () {
+              scaffoldKey.currentState.showBottomSheet(
+                (context) => Container(
 
-              IconButton(
-                  icon: Icon(Icons.clear),
-                  onPressed: () {
-                    setState(() {
-                      showBottomList = false;
-                      points.clear();
-                    });
-                  }),
-            ],
-          ),
-          Visibility(
-            child: (selectedMode == SelectedMode.Color)
-                ? Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: getColorList(),
-            )
-                : Slider(
-                value: (selectedMode == SelectedMode.StrokeWidth)
-                    ? strokeWidth
-                    : opacity,
-                max: (selectedMode == SelectedMode.StrokeWidth)
-                    ? 50.0
-                    : 1.0,
-                min: 0.0,
-                onChanged: (val) {
-                  setState(() {
-                    if (selectedMode == SelectedMode.StrokeWidth)
-                      strokeWidth = val;
-                    else
-                      opacity = val;
-                  });
-                }),
-            visible: showBottomList,
-          ),
+                ),
+                shape:RoundedRectangleBorder(borderRadius:BorderRadius.only(topLeft: Radius.circular(40),topRight:Radius.circular(40))),
+                backgroundColor:Colors.black12
+              );
+            },
+            child: Icon(Icons.sort),
+          )
         ],
       ),
       body: GestureDetector(
@@ -299,7 +373,7 @@ class _DrawState extends State<Draw> {
           });
         },
         child: CustomPaint(
-          foregroundPainter:MyPainter(),
+          foregroundPainter: MyPainter(),
           size: Size.infinite,
           painter: DrawingPainter(
             pointsList: points,
@@ -318,7 +392,7 @@ class _DrawState extends State<Draw> {
       onTap: () {
         showDialog(
           context: context,
-          builder:(context)=> AlertDialog(
+          builder: (context) => AlertDialog(
             title: const Text('Pick a color!'),
             content: SingleChildScrollView(
               child: ColorPicker(
@@ -326,7 +400,6 @@ class _DrawState extends State<Draw> {
                 onColorChanged: (color) {
                   pickerColor = color;
                 },
-
                 pickerAreaHeightPercent: 0.8,
               ),
             ),
@@ -349,10 +422,10 @@ class _DrawState extends State<Draw> {
           width: 36,
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.red, Colors.green, Colors.blue],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              )),
+            colors: [Colors.red, Colors.green, Colors.blue],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          )),
         ),
       ),
     );
@@ -381,8 +454,10 @@ class _DrawState extends State<Draw> {
 
 class DrawingPainter extends CustomPainter {
   DrawingPainter({this.pointsList});
+
   List<DrawingPoints> pointsList;
   List<Offset> offsetPoints = [];
+
   @override
   void paint(Canvas canvas, Size size) {
     for (int i = 0; i < pointsList.length - 1; i++) {
@@ -406,20 +481,23 @@ class DrawingPainter extends CustomPainter {
 class DrawingPoints {
   Paint paint;
   Offset points;
+
   DrawingPoints({this.points, this.paint});
 }
 
 enum SelectedMode { StrokeWidth, Opacity, Color }
 
-
-class MyPainter extends CustomPainter { //         <-- CustomPainter class
+class MyPainter extends CustomPainter {
+  //         <-- CustomPainter class
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
       ..color = Colors.orangeAccent
       ..strokeWidth = 1;
-    for(int i=1;i<10;i++){
-      canvas.drawLine(Offset(0,i*50.0), Offset(size.width,i*50.0), paint);
+    print(size.height / 50);
+
+    for (int i = 1; i < size.height / 50.round(); i++) {
+      canvas.drawLine(Offset(0, i * 50.0), Offset(size.width, i * 50.0), paint);
     }
   }
 
