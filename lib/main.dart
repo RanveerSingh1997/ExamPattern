@@ -50,7 +50,9 @@ class LoginPage extends StatelessWidget {
             RichText(
                 text: TextSpan(
                     text: "Login ".toUpperCase(),
-                    style: GoogleFonts.modakTextTheme().headline3.copyWith(fontSize:38),
+                    style: GoogleFonts.modakTextTheme()
+                        .headline3
+                        .copyWith(fontSize: 38),
                     children: [
                   TextSpan(
                     text: "in With",
@@ -68,7 +70,10 @@ class LoginPage extends StatelessWidget {
                 signInCard(
                   text: "Teacher",
                   onPress: () {
-                    Navigator.push(context, MaterialPageRoute(builder:(context)=>TeacherHomePage()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TeacherHomePage()));
                   },
                 ),
                 signInCard(
@@ -83,7 +88,6 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
 
 class signInCard extends StatelessWidget {
   final text, onPress;
@@ -130,13 +134,87 @@ class signInCard extends StatelessWidget {
 class TeacherHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DefaultTabController(
+      initialIndex: 0,
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(
+                icon: Icon(FontAwesomeIcons.solidFolder),
+                child: Text("Upload Paper"),
+              ),
+              Tab(
+                icon: Icon(FontAwesomeIcons.solidFilePdf),
+                child: Text("Check Paper"),
+              ),
+            ],
+          ),
+        ),
+        body: TabBarView(
+          children: [
+            Container(
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 2),
+                    child: Text(
+                      "Choose Paper Date",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(
+                    height:200,
+                    child: CupertinoDatePicker(
+                      initialDateTime: DateTime.now(),
+                      onDateTimeChanged: (DateTime newdate) {
+                        print(newdate);
+                      },
+                      use24hFormat: false,
+                      maximumDate: new DateTime(2021, 12, 30),
+                      minimumYear: 2021,
+                      maximumYear: 2021,
+                      minuteInterval: 1,
+                      mode: CupertinoDatePickerMode.date,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 8.0, vertical: 2),
+                    child: Text(
+                      "Choose Paper Duration",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  CupertinoTimerPicker(
+                    onTimerDurationChanged: (time) {},
+                    minuteInterval: 5,
+                    mode: CupertinoTimerPickerMode.hms,
+                    alignment: Alignment.center,
+                    initialTimerDuration:
+                        Duration(hours: 3, minutes: 0, seconds: 0),
+                    secondInterval: 10,
+                  ),
+                ],
+              ),
+            ),
+            Container(),
+          ],
+        ),
+      ),
     );
   }
 }
-
-
-
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
