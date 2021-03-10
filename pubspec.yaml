@@ -37,7 +37,9 @@ dependencies:
   flutter_colorpicker:
   font_awesome_flutter: ^8.11.0
   google_fonts: ^2.0.0
-
+  file_picker: ^3.0.0
+  firebase_auth:
+  google_sign_in:
 
 
 dev_dependencies:
