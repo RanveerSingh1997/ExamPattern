@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BranchesTreeState">
-    <expand />
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e085c77d-d9a6-4308-9182-2daed8d1cd82" name="Default Changelist" comment="code with exam pattern">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/constants/collection.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_web_21.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_web_21.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/login/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/serviceProvider/FirebaseInterface.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/serviceProvider/FirebaseInterface.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/serviceProvider/firebaseMethods.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/serviceProvider/firebaseMethods.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[RZ8N70CWSLL]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -83,7 +99,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -95,10 +123,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="code with exam pattern" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1615378394539">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1615448016699">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615378394539" />
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1615448016699" />
     <state x="92" y="92" width="1736" height="856" key="AVDManager" timestamp="1615352572871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -107,22 +135,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="100" y="100" width="1609" height="840" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615205575266" />
-    <state width="1877" height="441" key="GridCell.Tab.0.bottom" timestamp="1615443396757">
+    <state width="1877" height="441" key="GridCell.Tab.0.bottom" timestamp="1615452842018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="441" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615443396757" />
-    <state width="1877" height="441" key="GridCell.Tab.0.center" timestamp="1615443396757">
+    <state width="1877" height="441" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615452842018" />
+    <state width="1877" height="441" key="GridCell.Tab.0.center" timestamp="1615452842018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="441" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615443396757" />
-    <state width="1877" height="441" key="GridCell.Tab.0.left" timestamp="1615443396757">
+    <state width="1877" height="441" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615452842018" />
+    <state width="1877" height="441" key="GridCell.Tab.0.left" timestamp="1615452842018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="441" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615443396757" />
-    <state width="1877" height="441" key="GridCell.Tab.0.right" timestamp="1615443396757">
+    <state width="1877" height="441" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615452842018" />
+    <state width="1877" height="441" key="GridCell.Tab.0.right" timestamp="1615452842018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="441" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615443396757" />
+    <state width="1877" height="441" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615452842018" />
     <state x="684" y="325" key="git4idea.history.wholeTree.VcsStructureChooser" timestamp="1615204487645">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

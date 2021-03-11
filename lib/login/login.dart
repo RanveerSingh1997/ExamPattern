@@ -17,8 +17,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool isStudentSelected = false, isTeacherSelected = true;
-  final FirebaseAuth _auth = FirebaseAuth.instance;
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -82,17 +81,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 signInCard(
                   onPress: () {
-                     signInWithGoogle().then((value){
-                        if(value!=null){
-                          if(isTeacherSelected){
-                            Navigator.pushNamed(
-                                context, TeacherHomePage.routName);
-                          }else {
-                            Navigator.pushNamed(
-                                context, StudentHomePage.routName);
-                          }
-                        }
-                     });
+                     // signInWithGoogle().then((value){
+                     //    if(value!=null){
+                     //      if(isTeacherSelected){
+                     //        Navigator.pushNamed(
+                     //            context, TeacherHomePage.routName);
+                     //      }else {
+                     //        Navigator.pushNamed(
+                     //            context, StudentHomePage.routName);
+                     //      }
+                     //    }
+                     // });
                   },
                 )
               ],
@@ -126,21 +125,6 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Future<User> signInWithGoogle() async {
-    GoogleSignInAccount googleSignInAccount = await _googleSignIn.signIn();
-    GoogleSignInAuthentication googleSignInAuthentication =
-    await googleSignInAccount.authentication;
-    AuthCredential credential = GoogleAuthProvider.credential(
-      accessToken: googleSignInAuthentication.accessToken,
-      idToken: googleSignInAuthentication.idToken,
-    );
-    UserCredential authResult = await _auth.signInWithCredential(credential);
-    User _user = authResult.user;
-    assert(!_user.isAnonymous);
-    assert(await _user.getIdToken() != null);
-    User currentUser = await _auth.currentUser;
-    assert(_user.uid == currentUser.uid);
-    return currentUser;
-  }
+
 }
 
