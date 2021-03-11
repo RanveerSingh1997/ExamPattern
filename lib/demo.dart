@@ -11,8 +11,10 @@ class Demo extends StatefulWidget {
 
 class _DemoState extends State<Demo> with SingleTickerProviderStateMixin {
   Animation<double> animation;
+  Animation<double> transAnimation;
   AnimationController controller;
-  Tween<double> _rotationTween;
+  Animation<double> _rotationTween;
+  bool completed = false;
 
   @override
   void initState() {
@@ -21,32 +23,55 @@ class _DemoState extends State<Demo> with SingleTickerProviderStateMixin {
     controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
-    );
-    _rotationTween = Tween(begin: 0, end:0);
-    animation = _rotationTween.animate(controller)
-      ..addListener(() {
-        setState(() {});
-      });
-      // ..addStatusListener((status) {
-      //   if (status == AnimationStatus.completed) {
-      //     controller.reverse();
-      //   } else if (status == AnimationStatus.dismissed) {
-      //     controller.forward();
-      //   }
+    )..repeat(min: 0, max: 1, reverse: false, period: Duration(seconds: 1));
+    transAnimation = CurvedAnimation(parent: controller, curve: Interval(.7, 1,curve:Curves.ease));
+    _rotationTween = CurvedAnimation(parent: controller, curve: Interval(0,.7,curve:Curves.decelerate));
+    animation = CurvedAnimation(parent: controller, curve: Curves.easeOut);
+    controller.addStatusListener((status) {
+      if (status == AnimationStatus.completed) {
 
-    controller.repeat(min: 0,max: 1,reverse: false,period: Duration(seconds: 1));
+         setState(() {
+           completed = !completed;
+         });
+      } else if (status == AnimationStatus.dismissed) {
+        controller.forward();
+      }
+    });
+    controller.forward();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Transform(
-      alignment: Alignment.center,
-      origin: Offset(0, 0),
-      transform: Matrix4.skewX(0),
-      child: CustomPaint(
-        painter: ShapePainter(animation.value),
-        child: Container(
-          child:Center(child: Text("A",style:Theme.of(context).textTheme.headline1,)),
+    return Scaffold(
+      floatingActionButton:FloatingActionButton(
+        child:Icon(Icons.add),
+        onPressed:(){
+             if(!controller.isCompleted){
+               controller.forward();
+             }else{
+               controller.reverse();
+             }
+        },
+      ),
+      body: Center(
+        child: ScaleTransition(
+          scale: transAnimation,
+          child: RotationTransition(
+            turns: _rotationTween,
+            child: AnimatedContainer(
+              duration:Duration(seconds:1),
+              height: completed ? MediaQuery.of(context).size.height : 400,
+              width: completed ? MediaQuery.of(context).size.width : 400,
+              decoration: BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.circular(completed ? 0 : 10)),
+              child: Center(
+                  child: Text(
+                "A",
+                style: Theme.of(context).textTheme.headline1,
+              )),
+            ),
+          ),
         ),
       ),
     );

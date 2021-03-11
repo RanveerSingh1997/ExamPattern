@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.aBeeZeeTextTheme(),
         primaryColor: Colors.white,
       ),
-      initialRoute: Demo.routName,
-      //FirebaseAuth.instance.currentUser!=null?TeacherHomePage.routName:LoginPage.routName,
+      initialRoute:FirebaseAuth.instance.currentUser!=null?TeacherHomePage.routName:LoginPage.routName,
       routes: {
         LoginPage.routName: (context) => LoginPage(),
         StudentHomePage.routName: (context) => StudentHomePage(),
