@@ -1,9 +1,13 @@
 # This is a generated file; do not edit or check into version control.
+cloud_firestore=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore-1.0.1\\
+cloud_firestore_web=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\cloud_firestore_web-1.0.1\\
 file_picker=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\file_picker-3.0.0\\
 firebase_auth=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth-1.0.1\\
 firebase_auth_web=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_auth_web-1.0.2\\
 firebase_core=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core-1.0.1\\
 firebase_core_web=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_core_web-1.0.1\\
+firebase_storage=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_storage-8.0.0\\
+firebase_storage_web=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\firebase_storage_web-1.0.1\\
 flutter_plugin_android_lifecycle=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\flutter_plugin_android_lifecycle-2.0.0\\
 google_sign_in=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in-5.0.0\\
 google_sign_in_web=C:\\Users\\EKIN\\AppData\\Local\\Pub\\Cache\\hosted\\pub.dartlang.org\\google_sign_in_web-0.10.0\\
